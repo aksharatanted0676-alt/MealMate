@@ -1,0 +1,7 @@
+{
+  "name": "MealMate",
+  "description": "A smart AI-powered diet planner that suggests meals based on health goals and generates calorie reports and grocery lists.",
+  "requestFramePermissions": [
+    "geolocation"
+  ]
+}

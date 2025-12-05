@@ -1,0 +1,153 @@
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>MealMate</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              pastel: {
+                green: '#E0F2F1', // Teal 50
+                peach: '#FFF3E0', // Orange 50
+                blue: '#E3F2FD',  // Blue 50
+                purple: '#F3E5F5', // Purple 50
+                primary: '#4ADE80', // Green 400
+                dark: '#0F172A',    // Slate 900
+              }
+            },
+            fontFamily: {
+              sans: ['Inter', 'sans-serif'],
+            },
+            boxShadow: {
+              'soft': '0 10px 40px -10px rgba(0,0,0,0.5)',
+              'glow': '0 0 20px rgba(139, 92, 246, 0.3)',
+            },
+            animation: {
+              'fade-in': 'fadeIn 0.5s ease-out',
+              'fade-in-up': 'fadeInUp 0.5s ease-out',
+            },
+            keyframes: {
+              fadeIn: {
+                '0%': { opacity: '0' },
+                '100%': { opacity: '1' },
+              },
+              fadeInUp: {
+                '0%': { opacity: '0', transform: 'translateY(10px)' },
+                '100%': { opacity: '1', transform: 'translateY(0)' },
+              }
+            }
+          },
+        },
+      }
+    </script>
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
+      
+      body {
+        font-family: 'Inter', sans-serif;
+        /* Background managed by App.tsx */
+        transition: background-color 0.5s ease, color 0.5s ease;
+      }
+
+      /* Custom Range Slider */
+      input[type=range] {
+        -webkit-appearance: none;
+        background: transparent;
+      }
+      input[type=range]::-webkit-slider-thumb {
+        -webkit-appearance: none;
+        height: 24px;
+        width: 24px;
+        border-radius: 50%;
+        background: #8B5CF6;
+        margin-top: -10px;
+        box-shadow: 0 2px 6px rgba(0,0,0,0.5);
+        cursor: pointer;
+        transition: transform 0.1s;
+      }
+      input[type=range]::-webkit-slider-thumb:hover {
+        transform: scale(1.1);
+      }
+      input[type=range]::-webkit-slider-runnable-track {
+        width: 100%;
+        height: 4px;
+        cursor: pointer;
+        background: #334155;
+        border-radius: 2px;
+      }
+
+      /* Checkbox Animation */
+      input[type="checkbox"] {
+        appearance: none;
+        background-color: #1E293B;
+        margin: 0;
+        font: inherit;
+        color: currentColor;
+        width: 1.5em;
+        height: 1.5em;
+        border: 2px solid #475569;
+        border-radius: 0.5em;
+        display: grid;
+        place-content: center;
+        transition: all 0.2s ease-in-out;
+      }
+
+      input[type="checkbox"]::before {
+        content: "";
+        width: 0.8em;
+        height: 0.8em;
+        transform: scale(0);
+        transition: 120ms transform ease-in-out;
+        box-shadow: inset 1em 1em white;
+        transform-origin: center;
+        clip-path: polygon(14% 44%, 0 65%, 50% 100%, 100% 16%, 80% 0%, 43% 62%);
+      }
+
+      input[type="checkbox"]:checked {
+        background-color: #8B5CF6;
+        border-color: #8B5CF6;
+      }
+
+      input[type="checkbox"]:checked::before {
+        transform: scale(1);
+      }
+      
+      /* Hide Scrollbar but keep functionality */
+      .no-scrollbar::-webkit-scrollbar {
+          display: none;
+      }
+      .no-scrollbar {
+          -ms-overflow-style: none;
+          scrollbar-width: none;
+      }
+
+      @media print {
+        body { background: white; color: black; }
+        .no-print { display: none !important; }
+      }
+    </style>
+  <script type="importmap">
+{
+  "imports": {
+    "react-dom": "https://aistudiocdn.com/react-dom@^19.2.0",
+    "react-dom/client": "https://aistudiocdn.com/react-dom@^19.2.0/client",
+    "@google/genai": "https://aistudiocdn.com/@google/genai@^1.30.0",
+    "lucide-react": "https://aistudiocdn.com/lucide-react@^0.554.0",
+    "react": "https://aistudiocdn.com/react@^19.2.0",
+    "recharts": "https://aistudiocdn.com/recharts@^3.5.0",
+    "react-dom/": "https://aistudiocdn.com/react-dom@^19.2.0/",
+    "react/": "https://aistudiocdn.com/react@^19.2.0/",
+    "jspdf": "https://esm.sh/jspdf@2.5.1"
+  }
+}
+</script>
+</head>
+  <body>
+    <div id="root"></div>
+  </body>
+</html>
